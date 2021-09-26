@@ -45,8 +45,8 @@ function Login(props) {
       });
   }
   const redirectToHome = () => {
-    props.updateTitle('Home')
-    props.history.push('/');
+    props.updateTitle('Dashboard')
+    props.history.push('/dashboard');
   }
   const redirectToRegister = () => {
     props.history.push('/register');

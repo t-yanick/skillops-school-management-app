@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Home from '../components/Home';
 import Login from '../components/Login';
 import SignUp from '../components/SignUp';
+import Alert from '../components/Alert';
 import Dashboard from '../components/Dashboard';
 
 const AppRouter = () => {
@@ -29,6 +30,7 @@ const AppRouter = () => {
             {/* <Route exact path="/register" component={SignUp} /> */}
             <Route exact path="/dashboard" component={Dashboard} />
           </Switch>
+          <Alert errorMessage={errorMessage} hideError={updateErrorMessage} />
         </div>
       </div>
     </BrowserRouter>
