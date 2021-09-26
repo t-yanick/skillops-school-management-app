@@ -10,7 +10,7 @@ const Home = () => (
       </h2>
       <div>
         <Link to="/login" className="btn mb2 dark">Login</Link>
-        <Link to="/signup" className="btn mb2 medium">Signup</Link>
+        <Link to="/register" className="btn mb2 medium">Signup</Link>
       </div>
     </div>
   </div>
