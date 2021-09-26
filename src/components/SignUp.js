@@ -1,72 +1,42 @@
 import React, { useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
 
-const SignUp = () => {
-  const [errors, setErrors] = useState([]);
-  const [msg, setMsg] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
-  const runLoginAuth = async (email, password) => {
-
-  }
-
-  const handleSubmit = (email, password) => {
-    runLoginAuth(email, password);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    handleSubmit(email, password);
-  };
-
+function SignUp(props) {
   return (
-    <div>
-      <h1 className="heading">Login</h1>
-      <div className="content">
-        <div>
-          <form onSubmit={onSubmit} className="form">
-            <div className="form__group">
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="form__group">
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <div className="form__group">
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            {/* <button type="submit" className="btn mb3">{btnName}</button> */}
-            <button type="submit" className="btn mb3">Save</button>
-          </form>
+    <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+      <form>
+        <div className="form-group text-left">
+          <label htmlFor="exampleInputEmail1">Email address</label>
+          <input type="email"
+            className="form-control"
+            id="email"
+            placeholder="Enter email"
+          />
         </div>
-        <Link to="/" className="btn">Go back to Home</Link>
-        <h3>
-          Already registered, <span><Link to="/login" className="btn">Login Here</Link></span>
-        </h3>
-      </div>
+        <div className="form-group text-left">
+          <label htmlFor="exampleInputPassword1">Password</label>
+          <input type="password"
+            className="form-control"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <div className="form-group text-left">
+          <label htmlFor="exampleInputPassword1">Confirm Password</label>
+          <input type="password"
+            className="form-control"
+            id="confirmPassword"
+            placeholder="Retype Password"
+          />
+        </div>
+        <button
+          type="submit"
+          className="btn btn-primary"
+        >
+          Register
+        </button>
+      </form>
     </div>
   )
 }
-
-
 
 export default SignUp;
