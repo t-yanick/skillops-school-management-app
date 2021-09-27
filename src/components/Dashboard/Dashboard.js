@@ -14,7 +14,7 @@ function Dashboard() {
         <NavLink to="/add" className="link mb2 p-2" activeClassName="active" exact>
           Add student
         </NavLink>
-        <NavLink to="/levels" className="link mb2 p-2" activeClassName="active" exact>
+        <NavLink to="/classrooms" className="link mb2 p-2" activeClassName="active" exact>
           Available classrooms/levels
         </NavLink>
         <NavLink to="/add-classroom" className="link mb2 p-2" activeClassName="active" exact>

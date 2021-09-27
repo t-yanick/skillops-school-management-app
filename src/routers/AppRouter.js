@@ -9,6 +9,7 @@ import Dashboard from '../components/Dashboard/Dashboard';
 import AddStudent from '../components/Dashboard/AddStudent';
 import StudentsList from '../components/Dashboard/StudentsList';
 import EditStudent from '../components/Dashboard/EditStudent';
+import AddClassroom from '../components/Dashboard/AddClassroom';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 const AppRouter = () => {
@@ -52,6 +53,7 @@ const AppRouter = () => {
               )}
               path="/edit/:id"
             />
+            <Route component={AddClassroom} path="/add-classroom" />
             <Route component={() => <Redirect to="/students" />} />
           </Switch>
           <Alert errorMessage={errorMessage} hideError={updateErrorMessage} />
