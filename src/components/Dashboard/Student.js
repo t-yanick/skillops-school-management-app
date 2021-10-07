@@ -12,7 +12,7 @@ const Student = ({
   const history = useHistory();
 
   return (
-    <Card style={{ width: '18rem' }} className="book">
+    <Card style={{ width: '18rem' }} className="student">
       <Card.Body>
         <Card.Title className="student-name">{studentname}</Card.Title>
         <div className="student-details">

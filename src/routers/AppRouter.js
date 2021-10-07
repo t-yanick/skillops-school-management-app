@@ -10,12 +10,15 @@ import AddStudent from '../components/Dashboard/AddStudent';
 import StudentsList from '../components/Dashboard/StudentsList';
 import EditStudent from '../components/Dashboard/EditStudent';
 import AddClassroom from '../components/Dashboard/AddClassroom';
+import ClassroomList from '../components/Dashboard/ClassroomList';
+import EditClassroom from '../components/Dashboard/EditClassroom';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 const AppRouter = () => {
   const [title, updateTitle] = useState(null);
   const [errorMessage, updateErrorMessage] = useState(null);
   const [students, setStudents] = useLocalStorage('students', []);
+  const [classrooms, setClassrooms] = useLocalStorage('classrooms', []);
   return (
     <BrowserRouter>
       <div className="whole-container">
@@ -41,7 +44,6 @@ const AppRouter = () => {
                 <StudentsList {...props} students={students} setStudents={setStudents} />
               )}
               path="/students" exact={true} />
-            {/* <Route component={AddStudent} path="/add" /> */}
             <Route
               render={(props) => (
                 <AddStudent {...props} students={students} setStudents={setStudents} />
@@ -53,7 +55,18 @@ const AppRouter = () => {
               )}
               path="/edit/:id"
             />
-            <Route component={AddClassroom} path="/add-classroom" />
+            <Route
+              render={(props) => (
+                <AddClassroom {...props} classrooms={classrooms} setClassrooms={setClassrooms} />
+              )} path="/add-classroom" />
+            <Route
+              render={(props) => (
+                <ClassroomList {...props} classrooms={classrooms} setClassrooms={setClassrooms} />
+              )} path="/classrooms" />
+            <Route
+              render={(props) => (
+                <EditClassroom {...props} classrooms={classrooms} setClassrooms={setClassrooms} />
+              )} path="/edit-classroom/:id" />
             <Route component={() => <Redirect to="/students" />} />
           </Switch>
           <Alert errorMessage={errorMessage} hideError={updateErrorMessage} />

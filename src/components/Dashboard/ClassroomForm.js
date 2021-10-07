@@ -77,7 +77,7 @@ const ClassroomForm = (props) => {
           />
         </Form.Group>
         <Form.Group controlId="student">
-          <Form.Label>Student level</Form.Label>
+          <Form.Label>Student name</Form.Label>
           <Form.Control
             className="input-control"
             type="text"
